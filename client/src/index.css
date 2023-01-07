@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+:root {
+	--primary: rgb(138,171,204);
+	--techniques:rgb(74, 124, 230);
+	--etudes: rgb(26,40,71);
+	--pieces: rgb(68, 6, 212);
+	--light: rgb(188,212,231);
+	--grey: #888;
+	--dark: #313154;
+	--danger: #f13c20;
+	--white: rgb(26,40,71);
+	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+	--etudes-glow: 0px 0px 4px rgba(26,41,71,0.75);
+	--pieces-glow: 0px 0px 4px rgba(26,41,71,0.75);
+	--techniques-glow: 0px 0px 4px rgba(26,41,71,0.75);
+	--white-glow: 0px 0px 10px rgba(1, 18, 57, 0.75);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h3{
+  color: var(--dark);
+	font-size: 20px;
+	font-weight: 800;
+
+}
+
+body {
+  background: var(--light);
+	color: var(--dark);
+}
+.container {
+  padding: 30px;
+}
+
+input[type="text"]{
+  display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: var(--dark);
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: 1.5rem;
+}
+
+.options {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.options label{
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #FFF;
+	padding: 1.5rem;
+  box-shadow: var(--shadow);
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+input[type="submit"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: #FFF;
+	font-weight: 700;
+	text-transform: uppercase;
+	background-color: var(--primary);
+	box-shadow: var(--personal-glow);
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: 0.2s ease-out;
+}
+
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.task {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
+.task h3, .task input {
+  /* display:flex; */
+  align-items: center;
+  justify-content: space-between;
+}
+.task input{
+  appearance: none;
+  font-size: 20px;
+  border:none;
+  outline: none;
+	background: none;
+  cursor:pointer;
+  pointer-events:none;
+}
+.task p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 3px;
+  margin-left: 4px;
+}
+
+
+.add-form {
+  margin-bottom: 40px;
+}
+
+.form-control {
+  display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+.task{
+  border-radius: 0.5rem;
+}
+.task.Techniques {
+  border-left:5px solid var(--techniques);
+}
+.task.Etudes {
+  border-left:5px solid var(--etudes);
+}
+.task.Pieces {
+  border-left:5px solid var(--pieces);
+}
+.form-control input {
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 14px;
+  border:none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: none;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.bubble {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 999px;
+	border: 2px solid var(--etudes);
+	box-shadow: var(--etudes-glow);
+}
+
+.bubble.pieces {
+	border-color: var(--pieces);
+	box-shadow: var(--pieces-glow);
+}
+.bubble.techniques {
+	border-color: var(--techniques);
+	box-shadow: var(--techniques-glow);
+}
+
+
+.bubble::after {
+	content: '';
+	display: block;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	background-color: var(--etudes);
+	box-shadow: var(--etudes-glow);
+	border-radius: 999px;
+	transition: 0.2s ease-in-out;
+}
+
+.bubble.pieces::after {
+	background-color: var(--pieces);
+	box-shadow: var(--pieces-glow);
+}
+
+input:checked ~ .bubble::after {
+	width: 10px;
+	height: 10px;
+	opacity: 1;
+}
+
+header ul{
+  display:inline;
+  margin-left:30px;
+}
+header ul li{
+  display: inline-block;
+	margin:0 5px;
+}
+.link{
+  color: var(--white);
+	font-size: 15px;
+	line-height: 80px; 
+	font-weight: bold;
+}
+header .btn{
+  float:right;
+  margin:19px;
+}
+h1{
+  display:inline-flex;
+  font-size:40px;
+  
+}
+header{
+  display:inline;
+  align-items: center;
+}
