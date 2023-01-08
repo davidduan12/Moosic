@@ -7,5 +7,6 @@
 - Backend: Node, Express, MongoDB
 
 ### Features
- - Task Tracker with the ability to select category and timeframe
- - Record Repertoire you've played before and link to
+ - Task Tracker with the ability to select category and timeframe.
+ - Record Repertoire you've played before and link your performances!
+ - 
